@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <!--<script src="js/jquery.min.js"></script> -->
+   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <style type="text/css">
+      @media only screen and (max-width: 1140px) {
+        /* For mobile phones & tabs: */
+        [class*="col-"] {
+            padding-bottom: 85px;
+        }
+      }
+    </style>
+
+
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet" title="main"> -->
+	<title>NEMS Dashboard</title>
+</head>
+<body>
+	<div class="container-fluid">
+      <h1>NEMS Dashboard</h1>
+      <ul class="nav nav-tabs" id="tab">
+        <!--<li class="active"><a href="#tab_measures" data-toggle="tab">Measures</a></li>
+        <li><a href="#tab_graphs" data-toggle="tab">Graphs</a></li> -->
+        <li class="active"><a href="#tab_gpio" data-toggle="tab">GPIO </a></li>
+        <li><a href="#tab_configuration" data-toggle="tab">Configuration</a></li>
+      </ul>
+      <div class="tab-content">
+       <!-- <div class="tab-pane fade in active" id="tab_measures">         
+          <h2>Mini station meter DHT11</h2>
+          <ul class="nav nav-pills">
+            <li class="active"><a href="#">
+                <div class="span badge pull-right" id="temperature">-</div> Temperature</a></li>
+            <li><a href="#">
+                <div class="span badge pull-right" id="humidity">-</div> Humidity</a></li>
+            <li><a href="#">
+                <div class="span badge pull-right" id="pa">-</div> Atmospheric Pressure</a></li>
+          </ul>
+          <table id="tab_measures" data-toggle="table" data-show-colunns="true">
+            <thead>
+              <tr>
+                <th data-field="measure" data-align="left" datsortable="true" data-formatter="labelFormatter">Measure</th>
+                <th data-field="value" data-align="left" datsortable="true" data-formatter="valueFormatter">Value</th>
+                <th data-field="previous" data-align="left" datsortable="true" data-formatter="vpFormatter">Previous Value</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tab-pane fade" id="tab_graphs">
+          <h2>Graphs</h2>
+        </div> -->
+        <div class="tab-pane fade in active" id="tab_gpio">
+          <h2>GPIO</h2>
+          <br />
+          <br />
+          <div class="container">
+            <div class="row">
+             
+              <div id="D5" class="col-lg-2 col-md-4 col-sm-6 col-xs-12 col-lg-offset-1">
+                <div class="switch" id="D5">
+                  <input type="checkbox">
+                  <label><i class="icon-off"></i>
+                    <h4 class="text-center"><br>D5</h4>
+                  </label>
+                </div> 
+              </div>
+              <div id="D6" class="col-lg-2 col-md-4 col-sm-6 col-xs-12 col-lg-offset-1">
+                <div class="switch" id="D6">
+                  <input type="checkbox">
+                  <label><i class="icon-off"></i>
+                    <h4 class="text-center"><br>D6</h4>
+                  </label>
+                </div> 
+              </div>
+              <div id="D7" class="col-lg-2 col-md-4 col-sm-6 col-xs-12 col-lg-offset-1">
+                <div class="switch" id="D7">
+                  <input type="checkbox">
+                  <label><i class="icon-off"></i>
+                    <h4 class="text-center"><br>D7</h4>
+                  </label>
+                </div> 
+              </div>
+              <div id="D8" class="col-lg-2 col-md-4 col-sm-6 col-xs-12 col-lg-offset-1">
+                <div class="switch" id="D8">
+                  <input type="checkbox">
+                  <label><i class="icon-off"></i>
+                    <h4 class="text-center"><br>D8</h4>
+                  </label>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab_configuration">
+          <h2>Configuration        </h2>
+          <div class="btn-group">
+            <button class="btn btn-default" id="labelTheme">Theme</button>
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a class="change-style-menu-item" href="#" rel="bootstrap">Bootstrap</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="cerulean">Cerulean</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="cosmo">Cosmo</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="cyborg">Cyborg</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="darkly">Darkly</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="flatly">Flatly</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="journal">Journal</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="lumen">Lumen</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="paper">Paper</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="readable">Readable</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="sandstone">Sandstone</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="simplex">Simplex</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="slate">Slate</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="spacelab">Spacelab</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="superhero">Superhero</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="united">United</a></li>
+              <li><a class="change-style-menu-item" href="#" rel="yeti">Yeti  </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer navbar-fixed-bottom navbar-inverse" style="position:fixed; bottom:0; width:100%">
+          <div class="pull-left"><img src="img/logo.png" width="40" height="30"></div>
+          <div class="pull-right">
+            <p class="text-muted"><a href="https://www.cyberflux.tech">Cyberflux.tech</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+    <script>
+
+    //New Button Js
+
+     (function() {
+     $(document).ready(function() {
+       $('.switch input').on('change', function() {
+          var isChecked = $(this).is(':checked');
+          var state;
+          var $switchLabel = $('.switch label');
+          console.log('isChecked: ' + isChecked); 
+
+          if(isChecked) {
+            state = ('1');
+          } 
+          else {
+            state = ('0');
+          }
+
+          console.log('State: ' + state);
+
+          $('#D5').click(function(){ setbutton('D5',state); });
+          $('#D6').click(function(){ setbutton('D6',state); });
+          $('#D7').click(function(){ setbutton('D7',state); });
+          $('#D8').click(function(){ setbutton('D8',state); });
+
+          });
+        });
+
+      })();    
+
+     
+          //  GPIO change
+      //    $('#D5').click(function(){ setbutton('D5',state); });
+      //    $('#D6').click(function(){ setbutton('D6',state); });
+      //    $('#D7').click(function(){ setbutton('D7',state); });
+      //    $('#D8').click(function(){ setbutton('D8',state); });
+
+      
+      function setbutton(id, stat){
+        $.post("gpio?id=" + id + "&state=" + stat).done(function(data){
+          console.log("Return setbutton " + JSON.stringify(data)); 
+          var id_gpio = "#" + id + "_state";
+          console.log(id_gpio);
+          if ( data.success === "1" ) {
+            if ( data.state === "1" ) {
+              $(id_gpio).html("ON");
+            } else {
+              $(id_gpio).html("OFF");
+            }  
+          } else {
+            $(id_gpio).html('!');
+          }      
+        }).fail(function(err){
+          console.log("err setButton " + JSON.stringify(err));
+        });
+      } 
+
+
+      //  Change current theme
+      //  Adapted from : https://wdtz.org/bootswatch-theme-selector.html
+      var supports_storage = supports_html5_storage();
+      if (supports_storage) {
+        var theme = localStorage.theme;
+        if ( typeof theme != 'undefined' ) {
+          console.log("Reloading theme " + theme);
+          set_theme(get_themeUrl(theme));
+        }
+      }
+      
+      //  New theme selected
+      jQuery(function($){
+        $('body').on('click', '.change-style-menu-item', function() {
+          var theme_name = $(this).attr('rel');
+          console.log("Theme change " + theme_name);
+          var theme_url = get_themeUrl(theme_name);
+          console.log("URL theme : " + theme_url);
+          set_theme(theme_url);
+        });
+      });
+      // Recupere l'adresse du theme - Get theme URL
+      function get_themeUrl(theme_name){
+        $('#labelTheme').html("Th&egrave;me : " + theme_name);
+        var url_theme = "";
+        if ( theme_name === "bootstrap" ) {
+          url_theme = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
+        } else {
+          url_theme = "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/" + theme_name + "/bootstrap.min.css";
+        }
+        if (supports_storage) {
+          // Enregistre le theme sÃ©lectionnÃ© en local - save into the local database the selected theme
+          localStorage.theme = theme_name;
+        }
+        return url_theme;
+      }
+      // Applique le thÃ¨me - Apply theme
+      function set_theme(theme_url) {
+        $('link[title="main"]').attr('href', theme_url);
+      }
+      // Stockage local disponible ? - local storage available ?
+      function supports_html5_storage(){
+        try {
+          return 'localStorage' in window && window['localStorage'] !== null;
+        } catch (e) {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
